@@ -12,9 +12,9 @@
 - ADD THIS IN .ENV
   > PORT = 5000,
   > NODE_ENV = development,
-  > MONGO_URI = 'your mongodb database url'
+  > MONGO_URI = mongodb+srv://PAP:PAPDB@pap.apdm8bf.mongodb.net/?retryWrites=true&w=majority&appName=PAP
   > FIREBASE_TYPE= 'service_account'
-  > PROJECT_ID = 'your project id'
+  > PROJECT_ID = "pap-website-f0144"
   > PRIVATE_KEY_ID = 'your private key id'
   > PRIVATE_KEY ='your private key'
   > CLIENT_EMAIL ='your email'
