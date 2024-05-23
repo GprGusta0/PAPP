@@ -1,6 +1,5 @@
-import mongoose from 'mongoose';
-
-mongoose.set('strictQuery', false);
+// connect MongoDB with mongoose
+import mongoose from "mongoose";
 
 export const connectDB = async () => {
   try {
@@ -8,9 +7,9 @@ export const connectDB = async () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    console.log('MongoDB Connected');
+    console.log("MongoDB Connected");
   } catch (error) {
-    console.error(`Error: ${error.message}`);
+    console.log(`Error: ${error.message}`);
     process.exit(1);
   }
 };
