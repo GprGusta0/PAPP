@@ -231,11 +231,10 @@ const deleteMovie = asyncHandler(async (req, res) => {
     const movie = await Movie.findById(req.params.id);
     // if the movie is found delete it
     if (movie) {
-      await movie.remove();
+      await Movie.deleteOne({ _id: movie._id });
       res.json({ message: "Movie removed" });
-    }
-    // if the movie is not found send 404 error
-    else {
+    } else {
+      // if the movie is not found send 404 error
       res.status(404);
       throw new Error("Movie not found");
     }
@@ -243,6 +242,7 @@ const deleteMovie = asyncHandler(async (req, res) => {
     res.status(400).json({ message: error.message });
   }
 });
+
 
 // @desc    Delete all movies
 // @route   DELETE /api/movies
