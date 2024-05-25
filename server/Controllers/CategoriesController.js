@@ -75,7 +75,7 @@ const deleteCategory = asyncHandler(async (req, res) => {
 
     if (category) {
       // delete the category from database
-      await category.remove();
+      await Categories.deleteOne({ _id: category._id });
       // send success message to the client
       res.json({ message: "Category removed" });
     } else {
