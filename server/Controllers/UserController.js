@@ -127,11 +127,9 @@ const deleteUserProfile = asyncHandler(async (req, res) => {
         throw new Error("Can't delete admin user");
       }
       // else delete user from DB
-      await user.remove();
+      await User.deleteOne({ _id: user._id });
       res.json({ message: "User deleted successfully" });
-    }
-    // else send error message
-    else {
+    } else {
       res.status(404);
       throw new Error("User not found");
     }
@@ -272,11 +270,9 @@ const deleteUser = asyncHandler(async (req, res) => {
         throw new Error("Can't delete admin user");
       }
       // else delete user from DB
-      await user.remove();
+      await User.deleteOne({ _id: user._id });
       res.json({ message: "User deleted successfully" });
-    }
-    // else send error message
-    else {
+    } else {
       res.status(404);
       throw new Error("User not found");
     }
