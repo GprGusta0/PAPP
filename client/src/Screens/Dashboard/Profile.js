@@ -64,7 +64,7 @@ function Profile() {
   return (
     <SideBar>
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
-        <h2 className="text-xl font-bold">Profile</h2>
+        <h2 className="text-xl font-bold">Perfil</h2>
         <div className="w-full grid lg:grid-cols-12 gap-6">
           <div className="col-span-10">
             <Uploder setImageUrl={setImageUrl} />

@@ -23,49 +23,49 @@ function SideBar({ children }) {
   // logout
   const logoutHandler = () => {
     dispatch(logoutAction());
-    toast.success("Logged out successfully");
+    toast.success("Log out com sucesso");
     navigate("/login");
   };
 
   const SideLinks = userInfo?.isAdmin
     ? [
         {
-          name: "Dashboard",
+          name: "Painel de controlo",
           link: "/dashboard",
           icon: BsFillGridFill,
         },
         {
-          name: "Movies List",
+          name: "Lista de Filmes",
           link: "/movieslist",
           icon: FaListAlt,
         },
         {
-          name: "Add Movie",
+          name: "Adicionar Filme",
           link: "/addmovie",
           icon: RiMovie2Fill,
         },
         {
-          name: "Categories",
+          name: "Categorias",
           link: "/categories",
           icon: HiViewGridAdd,
         },
         {
-          name: "Users",
+          name: "Utilizadores",
           link: "/users",
           icon: FaUsers,
         },
         {
-          name: "Update Profile",
+          name: "Atualizar Perfil",
           link: "/profile",
           icon: FiSettings,
         },
         {
-          name: "Favorites Movies",
+          name: "Filmes Favoritos",
           link: "/favorites",
           icon: FaHeart,
         },
         {
-          name: "Change Password",
+          name: "Alterar Password",
           link: "/password",
           icon: RiLockPasswordLine,
         },
@@ -73,17 +73,17 @@ function SideBar({ children }) {
     : userInfo
     ? [
         {
-          name: "Update Profile",
+          name: "Atualizar Perfil",
           link: "/profile",
           icon: FiSettings,
         },
         {
-          name: "Favorites Movies",
+          name: "Filmes Favoritos",
           link: "/favorites",
           icon: FaHeart,
         },
         {
-          name: "Change Password",
+          name: "Alterar Password",
           link: "/password",
           icon: RiLockPasswordLine,
         },
