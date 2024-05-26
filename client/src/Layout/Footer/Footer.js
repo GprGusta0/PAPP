@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function Footer() {
   const Links = [
     {
-      title: 'Empresa',
+      title: 'ScareFlix',
       links: [
         {
           name: 'Inicio',

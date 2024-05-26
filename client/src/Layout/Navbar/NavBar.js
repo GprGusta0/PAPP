@@ -52,7 +52,7 @@ function NavBar() {
                 type="search"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search Movie Name from here"
+                placeholder="Pesquise o nome do filme aqui"
                 className="font-medium placeholder:text-border text-sm w-11/12 h-12 bg-transparent border-none px-2 text-black"
               />
             </form>
@@ -60,13 +60,13 @@ function NavBar() {
           {/* menus */}
           <div className="col-span-3 font-medium text-sm hidden xl:gap-14 2xl:gap-20 justify-between lg:flex xl:justify-end items-center">
             <NavLink to="/movies" className={Hover}>
-              Movies
+              Filmes
             </NavLink>
             <NavLink to="/about-us" className={Hover}>
-              About Us
+              Sobre Nós
             </NavLink>
             <NavLink to="/contact-us" className={Hover}>
-              Contact Us
+              Contacte-nos
             </NavLink>
             <NavLink
               to={
