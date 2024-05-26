@@ -4,28 +4,28 @@ import { Link } from 'react-router-dom';
 function Footer() {
   const Links = [
     {
-      title: 'Company',
+      title: 'Empresa',
       links: [
         {
-          name: 'Home',
+          name: 'Inicio',
           link: '/',
         },
         {
-          name: 'About Us',
+          name: 'Sobre nós',
           link: '/about-us',
         },
         {
-          name: 'Contact Us',
+          name: 'Contacte-nos',
           link: '/contact-us',
         },
         {
-          name: 'Movies',
+          name: 'Filmes',
           link: '/movies',
         },
       ],
     },
     {
-      title: 'Top Categories',
+      title: 'Categorias',
       links: [
         {
           name: 'Action',
@@ -46,22 +46,22 @@ function Footer() {
       ],
     },
     {
-      title: 'My Account',
+      title: 'Minha Conta',
       links: [
         {
-          name: 'Dashboard',
+          name: 'Painel de controlo',
           link: '/dashboard',
         },
         {
-          name: 'My Favorites',
-          link: '/favorite',
+          name: 'Meus Favoritos',
+          link: '/favorites',
         },
         {
-          name: 'Profile',
+          name: 'Prefil',
           link: '/profile',
         },
         {
-          name: 'Change Password',
+          name: 'Alterar Password',
           link: '/password',
         },
       ],
