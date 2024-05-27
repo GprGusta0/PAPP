@@ -38,13 +38,13 @@ function Uploder({ setImageUrl }) {
           <span className="mx-auto flex-colo text-subMain text-3xl">
             <FiUploadCloud />
           </span>
-          <p className="text-sm mt-2">Drag your image here</p>
+          <p className="text-sm mt-2">Arraste a imagem para aqui</p>
           <em className="text-xs text-border">
             {isDragActive
               ? "Drop it like it's hot!"
               : isDragReject
-              ? "Unsupported file type..."
-              : "only .jpg and .png files will be accepted"}
+              ? "Tipo de arquivo não suportado..."
+              : "Somente arquivos .jpg, .png e .gif serão aceitos"}
           </em>
         </div>
       )}

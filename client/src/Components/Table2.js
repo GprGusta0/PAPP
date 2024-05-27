@@ -54,7 +54,7 @@ const Rows = ({ data, users, OnEditFunction, onDeleteFunction }) => {
               onClick={() => OnEditFunction(data)}
               className="border border-border bg-dry flex-rows gap-2 text-border rounded py-1 px-2"
             >
-              Edit <FaEdit className="text-green-500" />
+              Editar <FaEdit className="text-green-500" />
             </button>
             <button
               onClick={() => onDeleteFunction(data?._id)}
@@ -79,22 +79,22 @@ function Table2({ data, users, OnEditFunction, onDeleteFunction }) {
             {users ? (
               <>
                 <th scope="col" className={`${Head}`}>
-                  Image
+                  Imagem
                 </th>
                 <th scope="col" className={`${Head}`}>
                   Id
                 </th>
                 <th scope="col" className={`${Head}`}>
-                  Date
+                  Data
                 </th>
                 <th scope="col" className={`${Head}`}>
-                  Full Name
+                  Nome Completo
                 </th>
                 <th scope="col" className={`${Head}`}>
                   Email
                 </th>
                 <th scope="col" className={`${Head}`}>
-                  Role
+                  Cargo
                 </th>
               </>
             ) : (
@@ -103,16 +103,16 @@ function Table2({ data, users, OnEditFunction, onDeleteFunction }) {
                   Id
                 </th>
                 <th scope="col" className={`${Head}`}>
-                  Date
+                  Data
                 </th>
                 <th scope="col" className={`${Head}`}>
-                  Name
+                  Nome
                 </th>
               </>
             )}
 
             <th scope="col" className={`${Head} text-end`}>
-              Actions
+              Ações
             </th>
           </tr>
         </thead>
