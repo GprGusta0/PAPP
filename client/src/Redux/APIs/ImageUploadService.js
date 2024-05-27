@@ -10,7 +10,7 @@ const uploadImageservice = async (file, setLoading) => {
     return data;
   } catch (error) {
     setLoading(false);
-    toast.error("Algo deu errado");
+    toast.error("Ocorreu um erro");
   }
 };
 

@@ -39,7 +39,7 @@ function HomeScreen() {
     dispatch(getTopRatedMovieAction());
     // errors
     if (isError || randomError || topError) {
-      toast.error("Something went wrong!");
+      toast.error("Ocorreu um erro");
     }
   }, [dispatch, isError, randomError, topError]);
 

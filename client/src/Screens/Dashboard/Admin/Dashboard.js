@@ -33,7 +33,7 @@ function Dashboard() {
 
   // delete movie handler
   const deleteMovieHandler = (id) => {
-    window.confirm("Are you sure you want do delete this movie?") &&
+    window.confirm("Tem certeza de que deseja excluir este filme?") &&
       dispatch(deleteMovieAction(id));
   };
 
@@ -43,7 +43,7 @@ function Dashboard() {
     dispatch(getAllUsersAction());
     // errors
     if (isError || catError || userError || deleteError) {
-      toast.error("Something went wrong!");
+      toast.error("Ocorreu um erro");
     }
   }, [dispatch, isError, catError, userError, deleteError]);
 
@@ -52,25 +52,25 @@ function Dashboard() {
     {
       bg: "bg-orange-600",
       icon: FaRegListAlt,
-      title: "Total Movies",
+      title: "Total de Filmes",
       total: isLoading ? "Loading..." : totalMovies || 0,
     },
     {
       bg: "bg-blue-700",
       icon: HiViewGridAdd,
-      title: "Total Categories",
+      title: "Total de Categorias",
       total: catLoading ? "Loading..." : categories?.length || 0,
     },
     {
       bg: "bg-green-600",
       icon: FaUser,
-      title: "Total Users",
+      title: "Total de Utlizadores",
       total: userLoading ? "Loading.." : users?.length || 0,
     },
   ];
   return (
     <SideBar>
-      <h2 className="text-xl font-bold">Dashboard</h2>
+      <h2 className="text-xl font-bold">Painel de Controlo</h2>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
         {DashboardData.map((data, index) => (
           <div
@@ -89,7 +89,7 @@ function Dashboard() {
           </div>
         ))}
       </div>
-      <h3 className="text-md font-medium my-6 text-border">Recent Movies</h3>
+      <h3 className="text-md font-medium my-6 text-border">Filmes recentes</h3>
       {isLoading || deleteLoading ? (
         <Loader />
       ) : movies.length > 0 ? (
@@ -99,7 +99,7 @@ function Dashboard() {
           onDeleteHandler={deleteMovieHandler}
         />
       ) : (
-        <Empty message="Empty" />
+        <Empty message="Vazio" />
       )}
     </SideBar>
   );

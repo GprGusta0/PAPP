@@ -106,7 +106,7 @@ function MovieRates({ movie }) {
               name="comment"
               register={{ ...register("comment") }}
               label="Comentário"
-              placeholder="Escreva o que acho deste filme..."
+              placeholder="Escreva o que achou deste filme..."
             />
             {errors.comment && <InlineError text={errors.comment.message} />}
           </div>

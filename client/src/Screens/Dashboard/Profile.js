@@ -41,7 +41,7 @@ function Profile() {
 
   // delete profile
   const deleteProfile = () => {
-    window.confirm("Are you sure you want to delete your profile?") &&
+    window.confirm("Tem certeza de que deseja excluir o seu perfil?") &&
       dispatch(deleteProfileAction());
   };
 
@@ -73,15 +73,15 @@ function Profile() {
           <div className="col-span-2">
             <Imagepreview
               image={imageUrl}
-              name={userInfo ? userInfo.fullName : "Netflixo React Tailwind"}
+              name={userInfo ? userInfo.fullName : ""}
             />
           </div>
         </div>
 
         <div className="w-full">
           <Input
-            label="FullName"
-            placeholder="Netflixo React Tailwind"
+            label="Nome Completo"
+            placeholder="Escreva o seu nome..."
             type="text"
             bg={true}
             name="fullName"
@@ -92,7 +92,7 @@ function Profile() {
         <div className="w-full">
           <Input
             label="Email"
-            placeholder="netflixo@gmail.com"
+            placeholder="ScareFlix@gmail.com"
             type="email"
             name="email"
             register={register("email")}
@@ -106,13 +106,13 @@ function Profile() {
             disabled={deleteLoading || isLoading}
             className="bg-subMain font-medium transitions hover:bg-main border border-subMain text-white py-3 px-6 rounded w-full sm:w-auto"
           >
-            {deleteLoading ? "Deleting..." : "Delete Account"}
+            {deleteLoading ? "A Excluir..." : "Excluir Conta"}
           </button>
           <button
             disabled={deleteLoading || isLoading}
             className="bg-main font-medium transitions hover:bg-subMain border border-subMain text-white py-3 px-6 rounded w-full sm:w-auto"
           >
-            {isLoading ? "Updating..." : "Update Profile"}
+            {isLoading ? "Atualizar..." : "Atualizar Perfil"}
           </button>
         </div>
       </form>

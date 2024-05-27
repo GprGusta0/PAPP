@@ -61,7 +61,7 @@ function AddMovie() {
   // delete cast handler
   const deleteCastHandler = (id) => {
     dispatch(removeCastAction(id));
-    toast.success("Cast deleted successfully");
+    toast.success("Elenco excluído com sucesso");
   };
 
   useEffect(() => {
@@ -87,7 +87,7 @@ function AddMovie() {
     }
     // if error then show error
     if (isError) {
-      toast.error("Something went wrong");
+      toast.error("Ocorreu um erro");
       dispatch({ type: "CREATE_MOVIE_RESET" });
     }
   }, [modalOpen, isSuccess, isError, dispatch, reset, navigate]);
@@ -100,12 +100,12 @@ function AddMovie() {
         cast={cast}
       />
       <div className="flex flex-col gap-6">
-        <h2 className="text-xl font-bold">Create Movie</h2>
+        <h2 className="text-xl font-bold">Criar filme</h2>
         <div className="w-full grid md:grid-cols-2 gap-6">
           <div className="w-full">
             <Input
-              label="Movie Title"
-              placeholder="Game of Thrones"
+              label="Titulo do Filme"
+              placeholder="O Exorcista"
               type="text"
               bg={true}
               name="name"
@@ -115,7 +115,7 @@ function AddMovie() {
           </div>
           <div className="w-full">
             <Input
-              label="Hours"
+              label="Horas"
               placeholder="2hr"
               type="number"
               bg={true}
@@ -129,8 +129,8 @@ function AddMovie() {
         <div className="w-full grid md:grid-cols-2 gap-6">
           <div className="w-full">
             <Input
-              label="Language Used"
-              placeholder="English"
+              label="Idioma"
+              placeholder="Inglês"
               type="text"
               bg={true}
               name="language"
@@ -140,8 +140,8 @@ function AddMovie() {
           </div>
           <div className="w-full">
             <Input
-              label="Year of Release"
-              placeholder="2022"
+              label="Ano de Lançamento"
+              placeholder="2024"
               type="number"
               bg={true}
               name="year"
@@ -156,7 +156,7 @@ function AddMovie() {
           {/* img without title */}
           <div className="flex flex-col gap-2">
             <p className="text-border font-semibold text-sm">
-              Image without Title
+              Imagem do Filme
             </p>
             <Uploder setImageUrl={setImageWithoutTitle} />
             <Imagepreview image={imageWithoutTitle} name="imageWithouTitle" />
@@ -164,7 +164,7 @@ function AddMovie() {
           {/* image with title */}
           <div className="flex flex-col gap-2">
             <p className="text-border font-semibold text-sm">
-              Image with Title
+              Capa Do Filme
             </p>
             <Uploder setImageUrl={setImageTitle} />
             <Imagepreview image={imageTitle} name="imageTitle" />
@@ -173,8 +173,8 @@ function AddMovie() {
         {/* DESCRIPTION */}
         <div className="w-full">
           <Message
-            label="Movie Description"
-            placeholder="Make it short and sweet"
+            label="Descrição do Filme"
+            placeholder=""
             name="desc"
             register={{ ...register("desc") }}
           />
@@ -184,7 +184,7 @@ function AddMovie() {
 
         <div className="text-sm w-full">
           <Select
-            label="Movie Category"
+            label="Categoria do Filme"
             options={categories?.length > 0 ? categories : []}
             name="category"
             register={{ ...register("category") }}
@@ -195,12 +195,12 @@ function AddMovie() {
 
         <div className="flex flex-col gap-2 w-full ">
           <label className="text-border font-semibold text-sm">
-            Movie Video
+            Ficheiro do Filme
           </label>
           <div className={`w-full grid ${videoUrl && "md:grid-cols-2"} gap-6`}>
             {videoUrl && (
               <div className="w-full bg-main text-sm text-subMain py-4 border border-border rounded flex-colo">
-                Video Uploaded!!!
+                Vídeo enviado!!
               </div>
             )}
             <Uploder setImageUrl={setVideoUrl} />
@@ -255,10 +255,10 @@ function AddMovie() {
           className="bg-subMain w-full flex-rows gap-6 font-medium text-white py-4 rounded"
         >
           {isLoading ? (
-            "Please wait..."
+            "Por favor, aguarde..."
           ) : (
             <>
-              <ImUpload /> Publish Movie
+              <ImUpload /> Publicar filme
             </>
           )}
         </button>

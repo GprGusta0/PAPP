@@ -31,13 +31,13 @@ function MoviesList() {
 
   // delete movie handler
   const deleteMovieHandler = (id) => {
-    window.confirm("Are you sure you want do delete this movie?") &&
+    window.confirm("Tem certeza de que deseja excluir este filme?") &&
       dispatch(deleteMovieAction(id));
   };
 
   // delete all movies handler
   const deleteAllMoviesHandler = () => {
-    window.confirm("Are you sure you want do delete all movies?") &&
+    window.confirm("Tem certeza de que deseja excluir todos os filmes?") &&
       dispatch(deleteAllMoviesAction());
   };
 
@@ -70,14 +70,14 @@ function MoviesList() {
     <SideBar>
       <div className="flex flex-col gap-6">
         <div className="flex-btn gap-2">
-          <h2 className="text-xl font-bold">Movies List</h2>
+          <h2 className="text-xl font-bold">Lista de filmes</h2>
           {movies?.length > 0 && (
             <button
               disabled={allLoading}
               onClick={deleteAllMoviesHandler}
               className="bg-main font-medium transitions hover:bg-subMain border border-subMain text-white py-3 px-6 rounded"
             >
-              {allLoading ? "Deleting..." : "Delete All"}
+              {allLoading ? "A Excluir..." : "Excluir Todos"}
             </button>
           )}
         </div>
@@ -109,7 +109,7 @@ function MoviesList() {
             </div>
           </>
         ) : (
-          <Empty message="You have no movies" />
+          <Empty message="Você não tem filmes" />
         )}
       </div>
     </SideBar>

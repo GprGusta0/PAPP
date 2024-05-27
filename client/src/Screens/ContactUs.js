@@ -7,22 +7,22 @@ function ContactUs() {
   const ContactData = [
     {
       id: 1,
-      title: 'Email Us',
-      info: 'Interactively grow backend ideas for cross-platform models.',
+      title: 'Envie-nos um email',
+      info: 'Entre em contato conosco por e-mail para suporte e informações adicionais.',
       icon: FiMail,
-      contact: 'info@zpunet.com',
+      contact: 'geral.barreiro@epbjc.pt',
     },
     {
       id: 2,
       title: 'Call Us',
-      info: 'Distinctively exploit optimal alignments for intuitive bandwidth.',
+      info: 'Ligue-nos para atendimento rápido e suporte ao cliente.',
       icon: FiPhoneCall,
-      contact: '+255 789 456 123',
+      contact: '212 064 790*',
     },
     {
       id: 3,
       title: 'Location',
-      info: 'Dar es salaam, Tanzania. 345 Kigamboni, Street No. 12,',
+      info: 'Rua Stinville, nº14 Bairro Santa Bárbara',
       icon: FiMapPin,
       contact: '',
     },
@@ -30,7 +30,7 @@ function ContactUs() {
   return (
     <Layout>
       <div className="min-height-screen container mx-auto px-2 my-6">
-        <Head title="Contact Us" />
+        <Head title="Contacte-nos" />
         <div className="grid mg:grid-cols-2 gap-6 lg:my-20 my-10 lg:grid-cols-3 xl:gap-8">
           {ContactData.map((item) => (
             <div

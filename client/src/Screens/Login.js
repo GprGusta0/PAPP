@@ -41,7 +41,7 @@ function Login() {
       navigate("/profile");
     }
     if (isSuccess) {
-      toast.success(`Welcome back ${userInfo?.fullName}`);
+      toast.success(`Bem vindo de volta ${userInfo?.fullName}`);
     }
     if (isError) {
       toast.error(isError);
@@ -64,7 +64,7 @@ function Login() {
           <div className="w-full">
             <Input
               label="Email"
-              placeholder="netflixo@gmail.com"
+              placeholder="ScareFlix@gmail.com"
               type="email"
               name="email"
               register={register("email")}
@@ -75,7 +75,7 @@ function Login() {
 
           <div className="w-full">
             <Input
-              label="Password"
+              label="Senha"
               placeholder="*******"
               type="password"
               bg={true}
@@ -96,15 +96,15 @@ function Login() {
                 "Loading..."
               ) : (
                 <>
-                  <FiLogIn /> Sign In
+                  <FiLogIn /> Entrar
                 </>
               )
             }
           </button>
           <p className="text-center text-border">
-            Don't have an account?{" "}
+            Não tem uma conta?{" "}
             <Link to="/register" className="text-dryGray font-semibold ml-2">
-              Sign Up
+              Registre se
             </Link>
           </p>
         </form>

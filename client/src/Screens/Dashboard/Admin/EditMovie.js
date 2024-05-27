@@ -71,7 +71,7 @@ function EditMovie() {
   // delete cast handler
   const deleteCastHandler = (id) => {
     dispatch(removeCastAction(id));
-    toast.success("Cast deleted successfully");
+    toast.success("Elenco excluído com sucesso");
   };
 
   useEffect(() => {
@@ -99,7 +99,7 @@ function EditMovie() {
     }
     // if error then show error
     if (editError) {
-      toast.error("Something went wrong");
+      toast.error("Ocorreu um erro");
       dispatch({ type: "UPDATE_MOVIE_RESET" });
     }
   }, [
@@ -127,16 +127,16 @@ function EditMovie() {
           <div className="flex-colo w-24 h-24 p-5 mb-4 rounded-full bg-dry text-subMain text-4xl">
             <RiMovie2Line />
           </div>
-          <p className="text-border text-sm">Something went wrong</p>
+          <p className="text-border text-sm">Ocorreu um erro</p>
         </div>
       ) : (
         <div className="flex flex-col gap-6">
-          <h2 className="text-xl font-bold">Edit "{movie?.name}"</h2>
+          <h2 className="text-xl font-bold">Editar "{movie?.name}"</h2>
           <div className="w-full grid md:grid-cols-2 gap-6">
             <div className="w-full">
               <Input
-                label="Movie Title"
-                placeholder="Game of Thrones"
+                label="Titulo do Filme"
+                placeholder="O Exorcista"
                 type="text"
                 bg={true}
                 name="name"
@@ -146,7 +146,7 @@ function EditMovie() {
             </div>
             <div className="w-full">
               <Input
-                label="Hours"
+                label="Horas"
                 placeholder="2hr"
                 type="number"
                 bg={true}
@@ -160,8 +160,8 @@ function EditMovie() {
           <div className="w-full grid md:grid-cols-2 gap-6">
             <div className="w-full">
               <Input
-                label="Language Used"
-                placeholder="English"
+                label="Idioma"
+                placeholder="Inglês"
                 type="text"
                 bg={true}
                 name="language"
@@ -173,8 +173,8 @@ function EditMovie() {
             </div>
             <div className="w-full">
               <Input
-                label="Year of Release"
-                placeholder="2022"
+                label="Ano de Lançamento"
+                placeholder="2024"
                 type="number"
                 bg={true}
                 name="year"
@@ -189,7 +189,7 @@ function EditMovie() {
             {/* img without title */}
             <div className="flex flex-col gap-2">
               <p className="text-border font-semibold text-sm">
-                Image without Title
+                Imagem do Filme
               </p>
               <Uploder setImageUrl={setImageWithoutTitle} />
               <Imagepreview image={imageWithoutTitle} name="imageWithouTitle" />
@@ -197,7 +197,7 @@ function EditMovie() {
             {/* image with title */}
             <div className="flex flex-col gap-2">
               <p className="text-border font-semibold text-sm">
-                Image with Title
+                Capa Do Filme
               </p>
               <Uploder setImageUrl={setImageTitle} />
               <Imagepreview image={imageTitle} name="imageTitle" />
@@ -206,8 +206,8 @@ function EditMovie() {
           {/* DESCRIPTION */}
           <div className="w-full">
             <Message
-              label="Movie Description"
-              placeholder="Make it short and sweet"
+              label="Descrição do Filme"
+              placeholder=""
               name="desc"
               register={{ ...register("desc") }}
             />
@@ -217,7 +217,7 @@ function EditMovie() {
 
           <div className="text-sm w-full">
             <Select
-              label="Movie Category"
+              label="Categoria do Filme"
               options={categories?.length > 0 ? categories : []}
               name="category"
               register={{ ...register("category") }}
@@ -228,14 +228,14 @@ function EditMovie() {
 
           <div className="flex flex-col gap-2 w-full ">
             <label className="text-border font-semibold text-sm">
-              Movie Video
+              Ficheiro do Filme
             </label>
             <div
               className={`w-full grid ${videoUrl && "md:grid-cols-2"} gap-6`}
             >
               {videoUrl && (
                 <div className="w-full bg-main text-sm text-subMain py-4 border border-border rounded flex-colo">
-                  Video Uploaded!!!
+                  Vídeo enviado!!
                 </div>
               )}
               <Uploder setImageUrl={setVideoUrl} />
@@ -251,8 +251,7 @@ function EditMovie() {
                 Adicionar Elenco
               </button>
               <span className="text-border text-xs">
-                if you add new casts the previous casts will be deleted. So you
-                should add them again
+                Se adicionar novos elencos, os elencos anteriores serão excluídos.
               </span>
             </div>
 
@@ -297,10 +296,10 @@ function EditMovie() {
             className="bg-subMain w-full flex-rows gap-6 font-medium text-white py-4 rounded"
           >
             {editLoading ? (
-              "Updating..."
+              "A Atualizar..."
             ) : (
               <>
-                <ImUpload /> Update Movie
+                <ImUpload /> Atualizar filme
               </>
             )}
           </button>

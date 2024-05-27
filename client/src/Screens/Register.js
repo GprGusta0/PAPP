@@ -41,7 +41,7 @@ function Register() {
       navigate("/profile");
     }
     if (isSuccess) {
-      toast.success(`Welcome ${userInfo?.fullName}`);
+      toast.success(`Bem-Vindo ${userInfo?.fullName}`);
       dispatch({ type: "USER_REGISTER_RESET" });
     }
     if (isError) {
@@ -63,8 +63,8 @@ function Register() {
           />
           <div className="w-full">
             <Input
-              label="FullName"
-              placeholder="Netflixo React Tailwind"
+              label="Nome Completo"
+              placeholder=""
               type="text"
               bg={true}
               name="fullName"
@@ -76,7 +76,7 @@ function Register() {
           <div className="w-full">
             <Input
               label="Email"
-              placeholder="netflixo@gmail.com"
+              placeholder="ScareFlix@gmail.com"
               type="email"
               name="email"
               register={register("email")}
@@ -86,7 +86,7 @@ function Register() {
           </div>
           <div className="w-full">
             <Input
-              label="Password"
+              label="Senha"
               placeholder="*******"
               type="password"
               bg={true}
@@ -107,15 +107,15 @@ function Register() {
                 "Loading..."
               ) : (
                 <>
-                  <FiLogIn /> Sign Up
+                  <FiLogIn /> Registrar
                 </>
               )
             }
           </button>
           <p className="text-center text-border">
-            Already have an account?{" "}
+            Já tem uma conta?{" "}
             <Link to="/login" className="text-dryGray font-semibold ml-2">
-              Sign In
+              Entrar
             </Link>
           </p>
         </form>

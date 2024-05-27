@@ -23,7 +23,7 @@ function Users() {
 
   // delete user handler
   const deleteMoviesHandler = (id) => {
-    if (window.confirm("Are you sure you want to delete this user?")) {
+    if (window.confirm("Tem certeza de que deseja excluir este usuário?")) {
       dispatch(deleteUserAction(id));
     }
   };
@@ -42,7 +42,7 @@ function Users() {
   return (
     <SideBar>
       <div className="flex flex-col gap-6">
-        <h2 className="text-xl font-bold">Users</h2>
+        <h2 className="text-xl font-bold">Utilizadores</h2>
         {isLoading ? (
           <Loader />
         ) : users?.length > 0 ? (
@@ -52,7 +52,7 @@ function Users() {
             onDeleteFunction={deleteMoviesHandler}
           />
         ) : (
-          <Empty message="You dont have any user" />
+          <Empty message="Você não tem nenhum usuário" />
         )}
       </div>
     </SideBar>
