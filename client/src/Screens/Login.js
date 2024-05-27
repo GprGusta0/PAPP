@@ -104,7 +104,7 @@ function Login() {
           <p className="text-center text-border">
             Não tem uma conta?{" "}
             <Link to="/register" className="text-dryGray font-semibold ml-2">
-              Registre se
+              Registe se
             </Link>
           </p>
         </form>

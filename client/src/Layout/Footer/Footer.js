@@ -57,7 +57,7 @@ function Footer() {
           link: '/favorites',
         },
         {
-          name: 'Prefil',
+          name: 'Perfil',
           link: '/profile',
         },
         {

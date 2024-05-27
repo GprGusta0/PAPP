@@ -14,15 +14,15 @@ function ContactUs() {
     },
     {
       id: 2,
-      title: 'Call Us',
+      title: 'Ligue-nos',
       info: 'Ligue-nos para atendimento rápido e suporte ao cliente.',
       icon: FiPhoneCall,
       contact: '212 064 790*',
     },
     {
       id: 3,
-      title: 'Location',
-      info: 'Rua Stinville, nº14 Bairro Santa Bárbara',
+      title: 'Localização',
+      info: 'Rua Stinville, nº14 Bairro Santa Bárbara Barreiro',
       icon: FiMapPin,
       contact: '',
     },

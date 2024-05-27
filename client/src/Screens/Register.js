@@ -107,7 +107,7 @@ function Register() {
                 "Loading..."
               ) : (
                 <>
-                  <FiLogIn /> Registrar
+                  <FiLogIn /> Registar
                 </>
               )
             }
