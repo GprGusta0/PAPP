@@ -5,7 +5,7 @@ import Movie from "../Movie";
 import Loader from "../Notfications/Loader";
 import { Empty } from "../Notfications/Empty";
 
-function PopularMovies({ isLoading, movies }) {
+function MoreMovies({ isLoading, movies }) {
   return (
     <div className="my-16">
       <Titles title="Filmes Populares" Icon={BsCollectionFill} />
@@ -26,4 +26,4 @@ function PopularMovies({ isLoading, movies }) {
   );
 }
 
-export default PopularMovies;
+export default MoreMovies;

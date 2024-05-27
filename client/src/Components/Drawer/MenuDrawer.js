@@ -17,17 +17,17 @@ function MenuDrawer({ drawerOpen, toggleDrawer }) {
 
   const Links = [
     {
-      name: "Movies",
+      name: "Filmes",
       link: "/movies",
       icon: BsCollectionPlay,
     },
     {
-      name: "About Us",
+      name: "Sobre Nós",
       link: "/about-us",
       icon: HiOutlineUserGroup,
     },
     {
-      name: "Contact Us",
+      name: "Contacte-nos",
       link: "/contact-us",
       icon: BiPhoneCall,
     },
