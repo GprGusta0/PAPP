@@ -1,7 +1,7 @@
 import React from "react";
 import { FaUserFriends } from "react-icons/fa";
-import { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 import Titles from "../Titles";
 
 function MovieCasts({ movie }) {

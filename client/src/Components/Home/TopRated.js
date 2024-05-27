@@ -6,7 +6,7 @@ import {
   BsCaretRightFill,
 } from "react-icons/bs";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper";
+import { Autoplay, Navigation } from "swiper/modules";
 import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Rating from "../Stars";
