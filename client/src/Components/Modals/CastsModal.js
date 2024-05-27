@@ -30,7 +30,7 @@ function CastsModal({ modalOpen, setModalOpen, cast }) {
   } = useForm({
     resolver: yupResolver(
       yup.object().shape({
-        name: yup.string().required("Cast Name is required"),
+        name: yup.string().required("O nome do elenco é obrigatório"),
       })
     ),
   });
@@ -46,7 +46,7 @@ function CastsModal({ modalOpen, setModalOpen, cast }) {
           id: cast.id,
         })
       );
-      toast.success("Cast updated successfully");
+      toast.success("Elenco atualizado com sucesso");
     } else {
       // else create cast
       dispatch(
@@ -56,7 +56,7 @@ function CastsModal({ modalOpen, setModalOpen, cast }) {
           id: generateId,
         })
       );
-      toast.success("Cast created successfully");
+      toast.success("Elenco criado com sucesso");
     }
     reset();
     setCastImage("");
@@ -73,7 +73,7 @@ function CastsModal({ modalOpen, setModalOpen, cast }) {
     <MainModal modalOpen={modalOpen} setModalOpen={setModalOpen}>
       <div className="inline-block sm:w-4/5 border border-border md:w-3/5 lg:w-2/5 w-full align-middle p-10 overflow-y-auto h-full bg-main text-white rounded-2xl">
         <h2 className="text-3xl font-bold">
-          {cast ? "Update Cast" : "Create Cast"}
+          {cast ? "Atualizar elenco" : "Criar elenco"}
         </h2>
         <form
           onSubmit={handleSubmit(onSubmit)}
@@ -81,8 +81,8 @@ function CastsModal({ modalOpen, setModalOpen, cast }) {
         >
           <div className="w-full">
             <Input
-              label="Cast name"
-              placeholder="John Doe"
+              label="Nome do Ator/a"
+              placeholder="Nome"
               type="text"
               name="name"
               register={register("name")}
@@ -91,7 +91,7 @@ function CastsModal({ modalOpen, setModalOpen, cast }) {
             {errors.name && <InlineError text={errors.name.message} />}
           </div>
           <div className="flex flex-col gap-2">
-            <p className="text-border font-semibold text-sm">Cast Image</p>
+            <p className="text-border font-semibold text-sm">Imagem do Ator/a</p>
             <Uploder setImageUrl={setCastImage} />
             <Imagepreview
               image={image ? image : "/images/user.png"}
@@ -103,7 +103,7 @@ function CastsModal({ modalOpen, setModalOpen, cast }) {
             onClick={() => setModalOpen(false)}
             className="w-full flex-rows gap-4 py-3 text-lg transitions hover:bg-dry border-2 border-subMain rounded bg-subMain text-white"
           >
-            {cast ? "Update" : "Add"}
+            {cast ? "Atualizar" : "Criar"}
           </button>
         </form>
       </div>

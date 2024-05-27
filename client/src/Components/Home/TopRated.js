@@ -93,14 +93,14 @@ function TopRated({ movies, isLoading }) {
 
   return (
     <div className="my-16">
-      <Titles title="Top Rated" Icon={BsBookmarkStarFill} />
+      <Titles title="Mais Votados" Icon={BsBookmarkStarFill} />
       <div className="mt-10">
         {isLoading ? (
           <Loader />
         ) : movies?.length > 0 ? (
           <SwiperTop nextEl={nextEl} prevEl={prevEl} movies={movies} />
         ) : (
-          <Empty message="It seem's like we dont have any movie" />
+          <Empty message="Parece que não temos nenhum filme" />
         )}
         <div className="w-full px-1 flex-rows gap-6 pt-12">
           <button className={classNames} ref={(node) => setPrevtEl(node)}>

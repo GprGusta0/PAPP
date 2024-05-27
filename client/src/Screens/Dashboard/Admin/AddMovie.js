@@ -212,7 +212,7 @@ function AddMovie() {
             onClick={() => setModalOpen(true)}
             className="w-full py-4 bg-main border border-subMain border-dashed text-white rounded"
           >
-            Add Cast
+            Adicionar Elenco
           </button>
           <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-4 grid-cols-2 gap-4">
             {casts?.length > 0 &&

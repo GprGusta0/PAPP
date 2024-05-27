@@ -31,7 +31,7 @@ function MovieInfo({ movie, setModalOpen, DownloadVideo, progress }) {
               {/* flex items */}
               <div className="flex items-center gap-4 font-medium text-dryGray">
                 <div className="flex-colo bg-subMain text-xs px-2 py-1">
-                  HD 4K
+                  HD
                 </div>
                 <FlexMovieItems movie={movie && movie} />
               </div>
@@ -50,7 +50,7 @@ function MovieInfo({ movie, setModalOpen, DownloadVideo, progress }) {
                 {/* language */}
                 <div className="col-span-2 flex-colo font-medium text-sm">
                   <p>
-                    Language :{" "}
+                    Linguagem :{" "}
                     <span className="ml-2 truncate">{movie?.language}</span>
                   </p>
                 </div>
@@ -60,7 +60,7 @@ function MovieInfo({ movie, setModalOpen, DownloadVideo, progress }) {
                     to={`/watch/${movie?._id}`}
                     className="bg-dry py-4 hover:bg-subMain transitions border-2 border-subMain rounded-full flex-rows gap-4 w-full sm:py-3"
                   >
-                    <FaPlay className="w-3 h-3" /> Watch
+                    <FaPlay className="w-3 h-3" /> Ver
                   </Link>
                 </div>
               </div>

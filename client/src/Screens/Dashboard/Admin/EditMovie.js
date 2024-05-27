@@ -248,7 +248,7 @@ function EditMovie() {
                 onClick={() => setModalOpen(true)}
                 className="w-full py-4 bg-main border border-subMain border-dashed text-white rounded"
               >
-                Add Cast
+                Adicionar Elenco
               </button>
               <span className="text-border text-xs">
                 if you add new casts the previous casts will be deleted. So you

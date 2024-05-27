@@ -15,27 +15,27 @@ import { reviewMovieAction } from "../../Redux/Actions/MoviesActions";
 
 const Ratings = [
   {
-    title: "0 - Poor",
+    title: "0 - Horrivel",
     value: 0,
   },
   {
-    title: "1 - Fair",
+    title: "1 - Mau",
     value: 1,
   },
   {
-    title: "2 - Good",
+    title: "2 - Bom",
     value: 2,
   },
   {
-    title: "3 - Very Good",
+    title: "3 - Muito Bom",
     value: 3,
   },
   {
-    title: "4 - Excellent",
+    title: "4 - Excelente",
     value: 4,
   },
   {
-    title: "5 - Masterpiece",
+    title: "5 - Obra-Prima",
     value: 5,
   },
 ];
@@ -75,7 +75,7 @@ function MovieRates({ movie }) {
 
   return (
     <div className="my-12">
-      <Titles title="Reviews" Icon={BsBookmarkStarFill} />
+      <Titles title="Avaliações" Icon={BsBookmarkStarFill} />
       <div className="mt-10 xl:grid flex-colo grid-cols-5 gap-12 bg-dry xs:p-10 py-10 px-2 sm:p-20 rounded">
         {/* write review */}
         <form
@@ -83,15 +83,14 @@ function MovieRates({ movie }) {
           className="xl:col-span-2 w-full flex flex-col gap-8"
         >
           <h3 className="text-xl text-text font-semibold">
-            Review "{movie?.name}"
+            Avaliações "{movie?.name}"
           </h3>
           <p className="text-sm leading-7 font-medium text-border">
-            Write a review for this movie. It will be posted on this page. lorem
-            ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            Escreva uma crítica para este filme. Será publicado nesta página.
           </p>
           <div className="text-sm w-full">
             <Select
-              label="Select Rating"
+              label="Selecione a classificação"
               options={Ratings}
               name="rating"
               register={{ ...register("rating") }}
@@ -106,8 +105,8 @@ function MovieRates({ movie }) {
             <Message
               name="comment"
               register={{ ...register("comment") }}
-              label="Message"
-              placeholder="Make it short and sweet...."
+              label="Comentário"
+              placeholder="Escreva o que acho deste filme..."
             />
             {errors.comment && <InlineError text={errors.comment.message} />}
           </div>
@@ -119,21 +118,21 @@ function MovieRates({ movie }) {
               type="submit"
               className="bg-subMain text-white py-4 w-full flex-colo rounded"
             >
-              {isLoading ? "Loading..." : "Submit"}
+              {isLoading ? "Loading..." : "Submeter"}
             </button>
           ) : (
             <Link
               to="/login"
               className="bg-main border border-dashed border-border text-subMain py-4 w-full flex-colo rounded"
             >
-              Login to review this movie
+              Faça login para avaliar este filme
             </Link>
           )}
         </form>
         {/* REVIWERS */}
         <div className="col-span-3 flex w-full flex-col gap-6">
           <h3 className="text-xl text-text font-semibold">
-            Reviews ({movie?.numberOfReviews})
+            Avaliações ({movie?.numberOfReviews})
           </h3>
           <div className="w-full flex flex-col bg-main gap-6 rounded-lg md:p-12 p-6 h-header overflow-y-scroll">
             {movie?.reviews?.length > 0 ? (
@@ -166,7 +165,7 @@ function MovieRates({ movie }) {
                 </div>
               ))
             ) : (
-              <Empty message={`Be first to rate "${movie?.name}"`} />
+              <Empty message={`Seja o primeiro a avaliar "${movie?.name}"`} />
             )}
           </div>
         </div>
