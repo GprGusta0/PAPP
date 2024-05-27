@@ -18,7 +18,7 @@ select:focus {
 
 /* Basic class for tailwind */
 .linear-bg {
-    background: linear-gradient(269.82deg, #07091c00 0.17%, #080a1ad6 99.87%);
+    background: linear-gradient(269.82deg, #000000 0.20%, #181818 99.80%);
 }
 
 .hoveres {
