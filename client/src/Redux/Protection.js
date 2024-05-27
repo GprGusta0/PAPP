@@ -5,7 +5,7 @@ export const ErrorsAction = (error, dispatch, action) => {
     error.response && error.response.data.message
       ? error.response.data.message
       : error.message;
-  if (message === "Not authorized, token failed") {
+  if (message === "Não autorizado, token falhou") {
     dispatch(logoutAction());
   }
   return dispatch({ type: action, payload: message });

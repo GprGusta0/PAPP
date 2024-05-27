@@ -104,12 +104,12 @@ function Footer() {
             </Link>
             <p className="leading-7 text-sm text-border mt-3">
               <span>
-                Lorem 196 Andrew Road, Suite 200, <br /> New York, NY 10007
+              Rua Stinville, nº14 Bairro Santa Bárbara <br /> 2830-144 Barreiro
               </span>
               <br />
-              <span>Tell: +255 754 661 423</span>
+              <span>Tel: 212 064 790*</span>
               <br />
-              <span>Email: info@zpunet.com</span>
+              <span>Email: geral.barreiro@epbjc.pt</span>
             </p>
           </div>
         </div>

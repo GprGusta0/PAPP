@@ -13,7 +13,7 @@ const IfMovieLiked = (movie) => {
 // like movie functionalty
 const LikeMovie = (movie, dispatch, userInfo) => {
   return !userInfo
-    ? toast.error("Please Login to add to favorites")
+    ? toast.error("Faça login para adicionar aos favoritos")
     : dispatch(
         likeMovieAction({
           movieId: movie._id,

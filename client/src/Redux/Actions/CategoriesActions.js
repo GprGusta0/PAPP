@@ -26,7 +26,7 @@ export const createCategoryAction = (title) => async (dispatch, getState) => {
       tokenProtection(getState)
     );
     dispatch({ type: CategoriesConstants.CREATE_CATEGORY_SUCCESS });
-    toast.success("Category created successfully");
+    toast.success("Categoria criada com sucesso");
     dispatch(getAllCategoriesAction());
   } catch (error) {
     ErrorsAction(error, dispatch, CategoriesConstants.CREATE_CATEGORY_FAIL);
@@ -44,7 +44,7 @@ export const updateCategoryAction =
         tokenProtection(getState)
       );
       dispatch({ type: CategoriesConstants.UPDATE_CATEGORY_SUCCESS });
-      toast.success("Category updated successfully");
+      toast.success("Categoria atualizada com sucesso");
       dispatch(getAllCategoriesAction());
     } catch (error) {
       ErrorsAction(error, dispatch, CategoriesConstants.UPDATE_CATEGORY_FAIL);
@@ -57,7 +57,7 @@ export const deleteCategoryAction = (id) => async (dispatch, getState) => {
     dispatch({ type: CategoriesConstants.DELETE_CATEGORY_REQUEST });
     await categoriesAPIs.deleteCategoryService(id, tokenProtection(getState));
     dispatch({ type: CategoriesConstants.DELETE_CATEGORY_SUCCESS });
-    toast.success("Category deleted successfully");
+    toast.success("Categoria excluída com sucesso");
     dispatch(getAllCategoriesAction());
   } catch (error) {
     ErrorsAction(error, dispatch, CategoriesConstants.DELETE_CATEGORY_FAIL);

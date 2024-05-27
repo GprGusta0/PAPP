@@ -92,7 +92,7 @@ export const reviewMovieAction =
         type: moviesConstants.CREATE_REVIEW_SUCCESS,
         payload: response,
       });
-      toast.success("Review added successfully");
+      toast.success("Comentário adicionado com sucesso");
       dispatch({ type: moviesConstants.CREATE_REVIEW_RESET });
       dispatch(getMovieByIdAction(id));
     } catch (error) {
@@ -112,7 +112,7 @@ export const deleteMovieAction = (id) => async (dispatch, getState) => {
       type: moviesConstants.DELETE_MOVIE_SUCCESS,
       payload: response,
     });
-    toast.success("Movie deleted successfully");
+    toast.success("Filme excluído com sucesso");
     dispatch(getAllMoviesAction({}));
   } catch (error) {
     ErrorsAction(error, dispatch, moviesConstants.DELETE_MOVIE_FAIL);
@@ -130,7 +130,7 @@ export const deleteAllMoviesAction = () => async (dispatch, getState) => {
       type: moviesConstants.DELETE_ALL_MOVIES_SUCCESS,
       payload: response,
     });
-    toast.success("All movies deleted successfully");
+    toast.success("Todos os filmes excluídos com sucesso");
     dispatch(getAllMoviesAction({}));
   } catch (error) {
     ErrorsAction(error, dispatch, moviesConstants.DELETE_ALL_MOVIES_FAIL);
@@ -149,7 +149,7 @@ export const createMovieAction = (movie) => async (dispatch, getState) => {
       type: moviesConstants.CREATE_MOVIE_SUCCESS,
       payload: response,
     });
-    toast.success("Movie created successfully");
+    toast.success("Filme criado com sucesso");
     dispatch(deleteAllCastAction());
   } catch (error) {
     ErrorsAction(error, dispatch, moviesConstants.CREATE_MOVIE_FAIL);
@@ -195,7 +195,7 @@ export const updateMovieAction = (id, movie) => async (dispatch, getState) => {
       type: moviesConstants.UPDATE_MOVIE_SUCCESS,
       payload: response,
     });
-    toast.success("Movie updated successfully");
+    toast.success("Filme atualizado com sucesso");
     dispatch(getMovieByIdAction(id));
     dispatch(deleteAllCastAction());
   } catch (error) {

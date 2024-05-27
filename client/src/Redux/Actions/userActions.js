@@ -64,7 +64,7 @@ const updateProfileAction = (user) => async (dispatch, getState) => {
       type: userConstants.USER_UPDATE_PROFILE_SUCCESS,
       payload: response,
     });
-    toast.success("Profile Updated");
+    toast.success("Perfil atualizado");
     dispatch({
       type: userConstants.USER_LOGIN_SUCCESS,
       payload: response,
@@ -80,7 +80,7 @@ const deleteProfileAction = () => async (dispatch, getState) => {
     dispatch({ type: userConstants.USER_DELETE_PROFILE_REQUEST });
     await userApi.deleteProfileService(tokenProtection(getState));
     dispatch({ type: userConstants.USER_DELETE_PROFILE_SUCCESS });
-    toast.success("Profile Deleted");
+    toast.success("Perfil excluído");
     dispatch(logoutAction());
   } catch (error) {
     ErrorsAction(error, dispatch, userConstants.USER_DELETE_PROFILE_FAIL);
@@ -126,7 +126,7 @@ const deleteFavoriteMoviesAction = () => async (dispatch, getState) => {
     dispatch({
       type: userConstants.DELETE_FAVORITE_MOVIES_SUCCESS,
     });
-    toast.success("Favorite Movies Deleted");
+    toast.success("Filmes favoritos excluídos");
   } catch (error) {
     ErrorsAction(error, dispatch, userConstants.DELETE_FAVORITE_MOVIES_FAIL);
   }
@@ -156,7 +156,7 @@ const deleteUserAction = (id) => async (dispatch, getState) => {
     dispatch({
       type: userConstants.DELETE_USER_SUCCESS,
     });
-    toast.success("User Deleted");
+    toast.success("Usuário excluído");
   } catch (error) {
     ErrorsAction(error, dispatch, userConstants.DELETE_USER_FAIL);
   }
@@ -174,7 +174,7 @@ const likeMovieAction = (movieId) => async (dispatch, getState) => {
       type: userConstants.LIKE_MOVIE_SUCCESS,
       payload: response,
     });
-    toast.success("Added to your favorites");
+    toast.success("Adicionado aos seus favoritos");
     dispatch(getFavoriteMoviesAction());
   } catch (error) {
     ErrorsAction(error, dispatch, userConstants.LIKE_MOVIE_FAIL);
