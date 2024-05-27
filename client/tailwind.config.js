@@ -15,9 +15,9 @@ module.exports = {
         xs: '475px',
       },
       colors: {
-        main: '#080A1A',
+        main: '#000000',
         subMain: '#F20000',
-        dry: '#0B0F29',
+        dry: '#181818',
         star: '#FFB000',
         text: '#C0C0C0',
         border: '#4b5563',
@@ -25,5 +25,4 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/line-clamp')],
 };
