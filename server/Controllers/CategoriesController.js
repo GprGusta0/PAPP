@@ -57,7 +57,7 @@ const updateCategory = asyncHandler(async (req, res) => {
       // send the updated category to the client
       res.json(updatedCategory);
     } else {
-      res.status(404).json({ message: "Category not found" });
+      res.status(404).json({ message: "Categoria não encontrada" });
     }
   } catch (error) {
     res.status(400).json({ message: error.message });
@@ -77,9 +77,9 @@ const deleteCategory = asyncHandler(async (req, res) => {
       // delete the category from database
       await Categories.deleteOne({ _id: category._id });
       // send success message to the client
-      res.json({ message: "Category removed" });
+      res.json({ message: "Categoria removida" });
     } else {
-      res.status(404).json({ message: "Category not found" });
+      res.status(404).json({ message: "Categoria não encontrada" });
     }
   } catch (error) {
     res.status(400).json({ message: error.message });

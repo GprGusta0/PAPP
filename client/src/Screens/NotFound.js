@@ -10,16 +10,15 @@ function NotFound() {
         src="/images/404.svg"
         alt="notfound"
       />
-      <h1 className="lg:text-4xl font-bold">Page Not Found</h1>
+      <h1 className="lg:text-4xl font-bold">Página não encontrada</h1>
       <p className="font-medium text-border italic leading-6">
-        The page you are looking for does not exist. You may have mistyped the
-        URL
+        A página que você está á procura não existe. Você pode ter digitado errado o URL
       </p>
       <Link
         to="/"
         className="bg-subMain transitions text-white flex-rows gap-4 font-medium py-3 hover:text-main px-6 rounded-md"
       >
-        <BiHomeAlt /> Back Home
+        <BiHomeAlt /> Voltar para a Pagina Principal
       </Link>
     </div>
   );

@@ -19,7 +19,7 @@ import { useParams } from "react-router-dom";
 function MoviesPage() {
   const { search } = useParams();
   const dispatch = useDispatch();
-  const [category, setCategory] = useState({ title: "All Categories" });
+  const [category, setCategory] = useState({ title: "Categorias" });
   const [year, setYear] = useState(YearData[0]);
   const [times, setTimes] = useState(TimesData[0]);
   const [rates, setRates] = useState(RatesData[0]);
@@ -36,9 +36,9 @@ function MoviesPage() {
   // queries
   const queries = useMemo(() => {
     const query = {
-      category: category?.title === "All Categories" ? "" : category?.title,
+      category: category?.title === "Categorias" ? "" : category?.title,
       time: times?.title.replace(/\D/g, ""),
-      language: language?.title === "Sort By Language" ? "" : language?.title,
+      language: language?.title === "Ordenar Por Idioma" ? "" : language?.title,
       rate: rates?.title.replace(/\D/g, ""),
       year: year?.title.replace(/\D/g, ""),
       search: search ? search : "",
@@ -93,11 +93,11 @@ function MoviesPage() {
       <div className="min-height-screen container mx-auto px-2 my-6">
         <Filters data={datas} />
         <p className="text-lg font-medium my-6">
-          Total{" "}
+          Total de{" "}
           <span className="font-bold text-subMain">
             {movies ? movies?.length : 0}
           </span>{" "}
-          items Found {search && `for "${search}"`}
+          Filmes Encontrados {search && `for "${search}"`}
         </p>
         {isLoading ? (
           <div className="w-full gap-6 flex-colo min-h-screen">
@@ -134,7 +134,7 @@ function MoviesPage() {
               <RiMovie2Line />
             </div>
             <p className="text-border text-sm">
-              It seem's like we dont have any movie
+              Parece que não temos nenhum filme
             </p>
           </div>
         )}

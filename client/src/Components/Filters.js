@@ -29,7 +29,7 @@ function Filters(props) {
       onChange: setCategory,
       items:
         categories?.length > 0
-          ? [{ title: "Todas as categorias" }, ...categories]
+          ? [{ title: "Categorias" }, ...categories]
           : [{ title: "Nenhuma categoria encontrada" }],
     },
     {

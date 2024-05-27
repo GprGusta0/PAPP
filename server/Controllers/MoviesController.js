@@ -73,7 +73,7 @@ const getMovieById = asyncHandler(async (req, res) => {
     // if the movie is not found send 404 error
     else {
       res.status(404);
-      throw new Error("Movie not found");
+      throw new Error("Filme não encontrado");
     }
   } catch (error) {
     res.status(400).json({ message: error.message });
@@ -130,7 +130,7 @@ const createMovieReview = asyncHandler(async (req, res) => {
       // if the user already reviewed this movie send 400 error
       if (alreadyReviewed) {
         res.status(400);
-        throw new Error("You already reviewed this movie");
+        throw new Error("Você já avaliou este filme");
       }
       // else create a new review
       const review = {
@@ -154,11 +154,11 @@ const createMovieReview = asyncHandler(async (req, res) => {
       await movie.save();
       // send the new movie to the client
       res.status(201).json({
-        message: "Review added",
+        message: "Comentário adicionado",
       });
     } else {
       res.status(404);
-      throw new Error("Movie not found");
+      throw new Error("Filme não encontrado");
     }
   } catch (error) {
     res.status(400).json({ message: error.message });
@@ -214,7 +214,7 @@ const updateMovie = asyncHandler(async (req, res) => {
       res.status(201).json(updatedMovie);
     } else {
       res.status(404);
-      throw new Error("Movie not found");
+      throw new Error("Filme não encontrado");
     }
   } catch (error) {
     res.status(400).json({ message: error.message });
@@ -232,11 +232,11 @@ const deleteMovie = asyncHandler(async (req, res) => {
     // if the movie is found delete it
     if (movie) {
       await Movie.deleteOne({ _id: movie._id });
-      res.json({ message: "Movie removed" });
+      res.json({ message: "Filme removido" });
     } else {
       // if the movie is not found send 404 error
       res.status(404);
-      throw new Error("Movie not found");
+      throw new Error("Filme não encontrado");
     }
   } catch (error) {
     res.status(400).json({ message: error.message });
@@ -252,7 +252,7 @@ const deleteAllMovies = asyncHandler(async (req, res) => {
   try {
     // delete all movies
     await Movie.deleteMany({});
-    res.json({ message: "All movies removed" });
+    res.json({ message: "Todos os filmes removidos" });
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
@@ -303,7 +303,7 @@ const createMovie = asyncHandler(async (req, res) => {
       res.status(201).json(createdMovie);
     } else {
       res.status(400);
-      throw new Error("Invalid movie data");
+      throw new Error("Dados de filme inválidos");
     }
   } catch (error) {
     res.status(400).json({ message: error.message });

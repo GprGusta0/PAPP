@@ -13,7 +13,7 @@ const registerUser = asyncHandler(async (req, res) => {
     // check if user exists
     if (userExists) {
       res.status(400);
-      throw new Error("User already exists");
+      throw new Error("Usuário já existe");
     }
 
     // hash password
@@ -40,7 +40,7 @@ const registerUser = asyncHandler(async (req, res) => {
       });
     } else {
       res.status(400);
-      throw new Error("Invalid user data");
+      throw new Error("Dados de usuário inválidos");
     }
   } catch (error) {
     res.status(400).json({ message: error.message });
@@ -68,7 +68,7 @@ const loginUser = asyncHandler(async (req, res) => {
       // if user not found or password not match send error message
     } else {
       res.status(401);
-      throw new Error("Invalid email or password");
+      throw new Error("E-mail ou senha inválida");
     }
   } catch (error) {
     res.status(400).json({ message: error.message });
@@ -105,7 +105,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
     // else send error message
     else {
       res.status(404);
-      throw new Error("User not found");
+      throw new Error("Utilizador não encontrado");
     }
   } catch (error) {
     res.status(400).json({ message: error.message });
@@ -124,14 +124,14 @@ const deleteUserProfile = asyncHandler(async (req, res) => {
       // if user is admin throw error message
       if (user.isAdmin) {
         res.status(400);
-        throw new Error("Can't delete admin user");
+        throw new Error("Não é possível excluir um administrador");
       }
       // else delete user from DB
       await User.deleteOne({ _id: user._id });
-      res.json({ message: "User deleted successfully" });
+      res.json({ message: "Utilizador excluído com sucesso" });
     } else {
       res.status(404);
-      throw new Error("User not found");
+      throw new Error("Utilizador não encontrado");
     }
   } catch (error) {
     res.status(400).json({ message: error.message });
@@ -153,12 +153,12 @@ const changeUserPassword = asyncHandler(async (req, res) => {
       const hashedPassword = await bcrypt.hash(newPassword, salt);
       user.password = hashedPassword;
       await user.save();
-      res.json({ message: "Password changed!!" });
+      res.json({ message: "Senha alterada!!" });
     }
     // else send error message
     else {
       res.status(401);
-      throw new Error("Invalid old password");
+      throw new Error("Senha antiga inválida");
     }
   } catch (error) {
     res.status(400).json({ message: error.message });
@@ -179,7 +179,7 @@ const getLikedMovies = asyncHandler(async (req, res) => {
     // else send error message
     else {
       res.status(404);
-      throw new Error("User not found");
+      throw new Error("Utilizador não encontrado");
     }
   } catch (error) {
     res.status(400).json({ message: error.message });
@@ -200,7 +200,7 @@ const addLikedMovie = asyncHandler(async (req, res) => {
       // if movie already liked send error message
       if (user.likedMovies.includes(movieId)) {
         res.status(400);
-        throw new Error("Movie already liked");
+        throw new Error("Filme já curtido");
       }
       // else add movie to liked movies and save it in DB
       user.likedMovies.push(movieId);
@@ -210,7 +210,7 @@ const addLikedMovie = asyncHandler(async (req, res) => {
     // else send error message
     else {
       res.status(404);
-      throw new Error("Movie not found");
+      throw new Error("Filme não encontrado");
     }
   } catch (error) {
     res.status(400).json({ message: error.message });
@@ -228,12 +228,12 @@ const deleteLikedMovies = asyncHandler(async (req, res) => {
     if (user) {
       user.likedMovies = [];
       await user.save();
-      res.json({ message: "Your favorites movies deleted successfully" });
+      res.json({ message: "Seus filmes favoritos foram excluídos com sucesso" });
     }
     // else send error message
     else {
       res.status(404);
-      throw new Error("User not found");
+      throw new Error("Utilizador não encontrado");
     }
   } catch (error) {
     res.status(400).json({ message: error.message });
@@ -267,14 +267,14 @@ const deleteUser = asyncHandler(async (req, res) => {
       // if user is admin throw error message
       if (user.isAdmin) {
         res.status(400);
-        throw new Error("Can't delete admin user");
+        throw new Error("Não é possível excluir um administrador");
       }
       // else delete user from DB
       await User.deleteOne({ _id: user._id });
-      res.json({ message: "User deleted successfully" });
+      res.json({ message: "Utilizador excluído com sucesso" });
     } else {
       res.status(404);
-      throw new Error("User not found");
+      throw new Error("Utilizador não encontrado");
     }
   } catch (error) {
     res.status(400).json({ message: error.message });
