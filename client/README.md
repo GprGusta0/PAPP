@@ -34,12 +34,13 @@ xs: '475px',
 
 ```
 
-# DEPENDENCY
+# IMAGES SIZES
 
-```
-yarn add @headlessui/react @heroicons/react @tailwindcss/line-clamp aos rc-drawer react-dropzone react-icons react-router-dom react-share react-spinners react-toastify swiper
-yarn add -D tailwindcss postcss autoprefixer
-```
+1264x384 imagem wihout title upper
+276x256 square inicial page
+
+286x400 Mais Votados Imagem
+396x558 Pagina Filme Banner
 
 # DRAWER CSS
 
