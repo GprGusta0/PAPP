@@ -11,6 +11,9 @@ import {
   getRandomMoviesAction,
   getTopRatedMovieAction,
 } from "../Redux/Actions/MoviesActions";
+import AllMovies from "../Components/Home/AllMovies";
+import MoviesId from "../Components/Home/MoviesId";
+
 
 function HomeScreen() {
   const dispatch = useDispatch();
@@ -50,6 +53,9 @@ function HomeScreen() {
         <PopularMovies movies={randomMovies} isLoading={randomLoading} />
         <MoreMovies movies={randomMovies} isLoading={randomLoading} />
         <TopRated movies={topMovies} isLoading={topLoading} />
+        <AllMovies movies={topMovies} isLoading={topLoading} />
+        {/* Include the MoviesId component */}
+        <MoviesId isLoading={isLoading} movieIds={['66528401e0bf74c326d9e1ba']} />
       </div>
     </Layout>
   );
