@@ -26,11 +26,11 @@ function NavBar() {
 
   return (
     <>
-      <div className="bg-main shadow-md sticky top-0 z-20 relative"> {/* Added relative positioning */}
+      <div className="bg-main shadow-md sticky top-0 z-20">
         <img
-          src={gifImage} // Use the imported GIF here
+          src={gifImage}
           alt="gif"
-          className="absolute top-0 right-0 w-55 h-55 object-contain" // Position the GIF in the top right corner with width and height of 200x200
+          className="absolute top-0 right-0 w-55 h-55 object-contain" 
         />
         <div className="container mx-auto py-6 px-2 lg:grid gap-10 grid-cols-7 justify-between items-center">
           {/* Logo */}
