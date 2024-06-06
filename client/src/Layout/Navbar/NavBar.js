@@ -4,6 +4,8 @@ import { FaSearch, FaHeart } from "react-icons/fa";
 import { CgUser } from "react-icons/cg";
 import { useSelector } from "react-redux";
 
+import gifImage from "../Navbar/spider.gif";
+
 function NavBar() {
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
@@ -24,7 +26,12 @@ function NavBar() {
 
   return (
     <>
-      <div className="bg-main shadow-md sticky top-0 z-20">
+      <div className="bg-main shadow-md sticky top-0 z-20 relative"> {/* Added relative positioning */}
+        <img
+          src={gifImage} // Use the imported GIF here
+          alt="gif"
+          className="absolute top-0 right-0 w-55 h-55 object-contain" // Position the GIF in the top right corner with width and height of 200x200
+        />
         <div className="container mx-auto py-6 px-2 lg:grid gap-10 grid-cols-7 justify-between items-center">
           {/* Logo */}
           <div className="col-span-1 lg:block hidden">
