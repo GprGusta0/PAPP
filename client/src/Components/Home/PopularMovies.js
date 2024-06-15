@@ -8,10 +8,20 @@ import Loader from "../Notfications/Loader";
 import { Empty } from "../Notfications/Empty";
 import { useSelector } from "react-redux";
 
+// Function to shuffle an array
+const shuffleArray = (array) => {
+  return array
+    .map((item) => ({ item, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ item }) => item);
+};
+
 const PopularMovies = () => {
   const { isLoading, movies } = useSelector((state) => state.getAllMovies);
   const [nextEl, setNextEl] = useState(null);
   const [prevEl, setPrevEl] = useState(null);
+
+  const shuffledMovies = movies ? shuffleArray(movies) : [];
 
   return (
     <div className="my-16">
@@ -19,7 +29,7 @@ const PopularMovies = () => {
       <div className="mt-10">
         {isLoading ? (
           <Loader />
-        ) : movies?.length > 0 ? (
+        ) : shuffledMovies.length > 0 ? (
           <Swiper
             navigation={{ nextEl, prevEl }}
             autoplay={true}
@@ -32,7 +42,7 @@ const PopularMovies = () => {
               1280: { slidesPerView: 4, spaceBetween: 40 },
             }}
           >
-            {movies.slice(0, 8).map((movie, index) => (
+            {shuffledMovies.slice(0, 8).map((movie, index) => (
               <SwiperSlide key={index}>
                 <Movie movie={movie} />
               </SwiperSlide>

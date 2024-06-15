@@ -1,6 +1,6 @@
 import React from "react";
 import Titles from "../Titles";
-import { BsCollectionFill } from "react-icons/bs";
+import { BsCollectionPlayFill } from "react-icons/bs";
 import Loader from "../Notfications/Loader";
 import { Empty } from "../Notfications/Empty";
 import Rating from "../Stars";
@@ -10,7 +10,7 @@ import { BiTime } from "react-icons/bi";
 function AllMovies({ isLoading, movies }) {
   return (
     <div className="my-16">
-      <Titles title="Mais Filmes" Icon={BsCollectionFill} />
+      <Titles title="Filmes disponiveis" Icon={BsCollectionPlayFill} />
       {isLoading ? (
         <Loader />
       ) : movies?.length > 0 ? (

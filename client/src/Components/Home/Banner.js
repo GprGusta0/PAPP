@@ -29,7 +29,7 @@ const Swipper = ({ sameClass, movies }) => {
       autoplay={{ delay: 4000, disableOnInteraction: false }}
       className={sameClass}
     >
-      {movies?.slice(0, 6).map((movie, index) => (
+      {movies?.slice(0, 12).map((movie, index) => (
         <SwiperSlide key={index} className="relative rounded overflow-hidden">
           <img
             src={movie?.image ? movie.image : "/images/user.png"}
