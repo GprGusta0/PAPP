@@ -26,11 +26,12 @@ function NavBar() {
 
   return (
     <>
+      {/* Spider */}
       <div className="bg-main shadow-md sticky top-0 z-20">
         <img
           src={gifImage}
           alt="gif"
-          className="absolute top-0 right-0 w-55 h-55 object-contain" 
+          className="absolute -top-6 right-0 w-55 h-55 object-contain" 
         />
         <div className="container mx-auto py-6 px-2 lg:grid gap-10 grid-cols-7 justify-between items-center">
           {/* Logo */}
@@ -47,11 +48,11 @@ function NavBar() {
           <div className="col-span-3">
             <form
               onSubmit={handleSearch}
-              className="w-full text-sm bg-dryGray rounded flex-btn gap-4"
+              className="w-full text-sm bg-zinc-900 rounded-full flex-btn gap-4"
             >
               <button
                 type="submit"
-                className="bg-subMain w-12 flex-colo h-12 rounded text-white"
+                className="bg-subMain w-12 flex-colo h-12 rounded-full text-white"
               >
                 <FaSearch />
               </button>
