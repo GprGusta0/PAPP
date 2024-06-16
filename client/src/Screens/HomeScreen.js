@@ -46,16 +46,17 @@ function HomeScreen() {
   }, [dispatch, isError, randomError, topError]);
 
   return (
-    <Layout>
-      <div className="container mx-auto min-h-screen px-2 mb-6">
-        <Banner movies={movies} isLoading={isLoading} />
-        <PopularMovies movies={randomMovies} isLoading={randomLoading} />
-        <MoreMovies movies={randomMovies} isLoading={randomLoading} />
-        <TopRated movies={topMovies} isLoading={topLoading} />
-        <AllMovies movies={topMovies} isLoading={topLoading} />
-      </div>
-    </Layout>
-  );
+  <Layout>
+    <div className="w-full min-h-screen px-10 mb-6">
+      <Banner movies={movies} isLoading={isLoading} />
+      <PopularMovies movies={randomMovies} isLoading={randomLoading} />
+      <MoreMovies movies={randomMovies} isLoading={randomLoading} />
+      <TopRated movies={topMovies} isLoading={topLoading} />
+      <AllMovies movies={topMovies} isLoading={topLoading} />
+    </div>
+  </Layout>
+);
+
 }
 
 export default HomeScreen;

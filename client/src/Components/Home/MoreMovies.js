@@ -42,7 +42,7 @@ const MoreMovies = () => {
               1280: { slidesPerView: 4, spaceBetween: 40 },
             }}
           >
-            {shuffledMovies.slice(0, 8).map((movie, index) => (
+            {shuffledMovies.slice(0, 12).map((movie, index) => (
               <SwiperSlide key={index}>
                 <Movie movie={movie} />
               </SwiperSlide>
