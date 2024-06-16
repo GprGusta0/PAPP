@@ -8,7 +8,7 @@ import Loader from "../Notfications/Loader";
 import { Empty } from "../Notfications/Empty";
 import { useSelector } from "react-redux";
 
-const PopularMovies = () => {
+const RecentlyAdded = () => {
   const { isLoading, movies } = useSelector((state) => state.getAllMovies);
   const [swiperInstance, setSwiperInstance] = useState(null);
   const [nextEl, setNextEl] = useState(null);
@@ -65,4 +65,4 @@ const PopularMovies = () => {
   );
 };
 
-export default PopularMovies;
+export default RecentlyAdded;

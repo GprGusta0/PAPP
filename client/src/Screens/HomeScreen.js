@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import Banner from "../Components/Home/Banner";
-import PopularMovies from "../Components/Home/PopularMovies";
+import RecentlyAdded from "../Components/Home/RecentlyAdded";
 import MoreMovies from "../Components/Home/MoreMovies";
 import TopRated from "../Components/Home/TopRated";
 import Layout from "../Layout/Layout";
@@ -49,7 +49,7 @@ function HomeScreen() {
   <Layout>
     <div className="w-full min-h-screen px-10 mb-6">
       <Banner movies={movies} isLoading={isLoading} />
-      <PopularMovies movies={randomMovies} isLoading={randomLoading} />
+      <RecentlyAdded movies={randomMovies} isLoading={randomLoading} />
       <MoreMovies movies={randomMovies} isLoading={randomLoading} />
       <TopRated movies={topMovies} isLoading={topLoading} />
       <AllMovies movies={topMovies} isLoading={topLoading} />
