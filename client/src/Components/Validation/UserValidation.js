@@ -2,7 +2,7 @@ import * as yup from "yup";
 
 // login validation
 const LoginValidation = yup.object().shape({
-  email: yup.string().email().required("O e-mail é obrigatório").trim(),
+  email: yup.string().email("O e-mail deve ser um e-mail válido").required("O e-mail é obrigatório").trim(),
   password: yup
     .string()
     .required("Senha requerida")

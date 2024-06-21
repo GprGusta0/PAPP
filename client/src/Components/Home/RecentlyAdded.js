@@ -42,8 +42,9 @@ const RecentlyAdded = () => {
           <Swiper
             onSwiper={setSwiperInstance} // Save Swiper instance
             navigation={{ nextEl, prevEl }} // Navigation buttons
-            autoplay={{ delay: 3000 }} // Autoplay configuration
+            autoplay={true} // Autoplay configuration
             speed={1000} // Transition speed
+            modules={[Navigation, Autoplay]}
             breakpoints={{
               0: { slidesPerView: 1, spaceBetween: 10 },
               768: { slidesPerView: 2, spaceBetween: 20 },
