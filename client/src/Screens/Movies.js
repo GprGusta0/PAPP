@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { useLocation } from "react-router-dom";
 import Filters from "../Components/Filters";
 import Layout from "../Layout/Layout";
 import Movie from "../Components/Movie";
@@ -14,12 +15,17 @@ import {
   TimesData,
   YearData,
 } from "../Data/FilterData";
-import { useParams } from "react-router-dom";
 
 function MoviesPage() {
-  const { search } = useParams();
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const categoryFromURL = queryParams.get('category');
+  const searchFromURL = queryParams.get('search'); // Get 'search' value from URL
+
   const dispatch = useDispatch();
-  const [category, setCategory] = useState({ title: "Categorias" });
+  const [category, setCategory] = useState({ title: categoryFromURL || "Categorias" });
+  const [search] = useState(searchFromURL || ""); // Initialize 'search' state
+
   const [year, setYear] = useState(YearData[0]);
   const [times, setTimes] = useState(TimesData[0]);
   const [rates, setRates] = useState(RatesData[0]);
@@ -41,10 +47,10 @@ function MoviesPage() {
       language: language?.title === "Ordenar Por Idioma" ? "" : language?.title,
       rate: rates?.title.replace(/\D/g, ""),
       year: year?.title.replace(/\D/g, ""),
-      search: search ? search : "",
+      search: search || "", // Use 'search' state
     };
     return query;
-  }, [category, times, language, rates, year, search]);
+  }, [category, times, language, rates, year, search]); // Add 'search' as dependency
 
   // useEffect
   useEffect(() => {

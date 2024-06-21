@@ -29,11 +29,11 @@ function Footer() {
       links: [
         {
           name: 'Terror',
-          link: '#',
+          link: '/movies?category=Terror',
         },
         {
           name: 'Sobrenatural',
-          link: '#',
+          link: '/movies?category=Sobrenatural',
         },
       ],
     },
