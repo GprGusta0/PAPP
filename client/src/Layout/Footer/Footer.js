@@ -28,20 +28,12 @@ function Footer() {
       title: 'Categorias',
       links: [
         {
-          name: 'Action',
-          link: '#',
+          name: 'Terror',
+          link: '/movies?category=Terror',
         },
         {
-          name: 'Romantic',
-          link: '#',
-        },
-        {
-          name: 'Drama',
-          link: '#',
-        },
-        {
-          name: 'Historical',
-          link: '#',
+          name: 'Sobrenatural',
+          link: '/movies?category=Sobrenatural',
         },
       ],
     },

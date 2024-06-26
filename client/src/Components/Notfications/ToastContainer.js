@@ -8,6 +8,10 @@ export default function ToastContainer() {
       gutter={8}
       toastOptions={{
         duration: 2000,
+        style: {
+          background: '#121212',
+          color: '#fff',
+        },
       }}
     />
   );

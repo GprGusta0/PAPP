@@ -3,7 +3,6 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FaSearch, FaHeart } from "react-icons/fa";
 import { CgUser } from "react-icons/cg";
 import { useSelector } from "react-redux";
-
 import gifImage from "../Navbar/spider.gif";
 
 function NavBar() {
@@ -18,7 +17,7 @@ function NavBar() {
     e.preventDefault();
     if (search.trim()) {
       navigate(`/movies/${search}`);
-      setSearch(search);
+      setSearch("");
     } else {
       navigate(`/movies`);
     }

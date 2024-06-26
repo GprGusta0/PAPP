@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { useLocation, useParams } from "react-router-dom";
 import Filters from "../Components/Filters";
 import Layout from "../Layout/Layout";
 import Movie from "../Components/Movie";
@@ -14,26 +15,27 @@ import {
   TimesData,
   YearData,
 } from "../Data/FilterData";
-import { useParams } from "react-router-dom";
 
 function MoviesPage() {
   const { search } = useParams();
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const categoryFromURL = queryParams.get('category');
+  const searchFromURL = queryParams.get('searchQuery'); // Get 'searchQuery' value from URL
+
   const dispatch = useDispatch();
-  const [category, setCategory] = useState({ title: "Categorias" });
+  const [category, setCategory] = useState({ title: categoryFromURL || "Categorias" });
+  const [searchQuery] = useState(searchFromURL || ""); // Initialize 'searchQuery' state
+
   const [year, setYear] = useState(YearData[0]);
   const [times, setTimes] = useState(TimesData[0]);
   const [rates, setRates] = useState(RatesData[0]);
   const [language, setLanguage] = useState(LanguageData[0]);
-  const sameClass =
-    "text-white py-2 px-4 rounded font-semibold border-2 border-subMain hover:bg-subMain";
-  // all movies
-  const { isLoading, isError, movies, pages, page } = useSelector(
-    (state) => state.getAllMovies
-  );
-  // get all categories
+  const sameClass = "text-white py-2 px-4 rounded font-semibold border-2 border-subMain hover:bg-subMain";
+
+  const { isLoading, isError, movies, pages, page } = useSelector((state) => state.getAllMovies);
   const { categories } = useSelector((state) => state.categoryGetAll);
 
-  // queries
   const queries = useMemo(() => {
     const query = {
       category: category?.title === "Categorias" ? "" : category?.title,
@@ -44,34 +46,21 @@ function MoviesPage() {
       search: search ? search : "",
     };
     return query;
-  }, [category, times, language, rates, year, search]);
+  }, [category, times, language, rates, year, search, searchQuery]);
 
-  // useEffect
   useEffect(() => {
-    // errors
     if (isError) {
       toast.error(isError);
     }
-    // get all movies
     dispatch(getAllMoviesAction(queries));
   }, [dispatch, isError, queries]);
 
-  // pagination next and pev pages
   const nextPage = () => {
-    dispatch(
-      getAllMoviesAction({
-        ...queries,
-        pageNumber: page + 1,
-      })
-    );
+    dispatch(getAllMoviesAction({ ...queries, pageNumber: page + 1 }));
   };
+
   const prevPage = () => {
-    dispatch(
-      getAllMoviesAction({
-        ...queries,
-        pageNumber: page - 1,
-      })
-    );
+    dispatch(getAllMoviesAction({ ...queries, pageNumber: page - 1 }));
   };
 
   const datas = {
@@ -97,7 +86,7 @@ function MoviesPage() {
           <span className="font-bold text-subMain">
             {movies ? movies?.length : 0}
           </span>{" "}
-          Filmes Encontrados {search && `for "${search}"`}
+          Filmes Encontrados {searchQuery && `for "${searchQuery}"`}
         </p>
         {isLoading ? (
           <div className="w-full gap-6 flex-colo min-h-screen">
@@ -110,7 +99,6 @@ function MoviesPage() {
                 <Movie key={index} movie={movie} />
               ))}
             </div>
-            {/* Loading More */}
             <div className="w-full flex-rows gap-6 md:my-20 my-10">
               <button
                 onClick={prevPage}
