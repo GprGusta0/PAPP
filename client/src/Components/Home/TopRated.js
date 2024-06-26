@@ -27,7 +27,7 @@ const SwiperTop = ({ prevEl, nextEl, movies }) => {
   return (
     <Swiper
       navigation={{ nextEl, prevEl }}
-      autoplay={true}
+      autoplay={false}
       speed={1000}
       loop={true}
       modules={[Navigation, Autoplay]}
